@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Study App</title>
+    <script src="script.js"></script>
+
+</head>
+<p>Your score is: <span id="dialogScore">0</span></p>
+<body>
+    <button id="backbutton" onclick="window.location.href='./index.html'">Back</button> <!-- Updated path for back button -->
+    <button id="stoptimer" onclick="stoptimer()">Stop Timer</button>
+
+    <div class="container">
+        <h1>Quiz</h1>
+        <style>
+            body {
+              background: rgba(11, 5, 195, 0.753);
+            }
+        </style>
+
+        <div class="quiz-section">
+            <!-- Questions Section -->
+            <div id="question-container" class="question-container">
+                <h2 id="question1">Places</h2>
+                <h2 id="question2">People</h2>
+                <h2 id="question3">Movies</h2>
+                <h2 id="question4">Games</h2>
+                <h2 id="question5">Sports</h2>
+            </div>
+
+            <!-- Button Grid -->
+            <div>
+                <button id="showDialog">100</button>
+                <button id="showDialog1">100</button>
+                <button id="showDialog2">100</button>
+                <button id="showDialog3">100</button>
+                <button id="showDialog4">100</button>
+                </div>
+              <div>
+                <button id="showDialog5">200</button>
+                <button id="showDialog6">200</button>
+                <button id="showDialog7">200</button>
+                <button id="showDialog8">200</button>
+                <button id="showDialog9">200</button>
+              </div>
+              <div>
+                <button id="showDialog10">300</button>
+                <button id="showDialog11">300</button>
+                <button id="showDialog12">300</button>
+                <button id="showDialog13">300</button>
+                <button id="showDialog14">300</button>
+              </div>
+              <div>
+                <button id="showDialog15">400</button>
+                <button id="showDialog16">400</button>
+                <button id="showDialog17">400</button>
+                <button id="showDialog18">400</button>
+                <button id="showDialog19">400</button>
+              </div>
+              <div>
+                <button id="showDialog20">500</button>
+                <button id="showDialog21">500</button>
+                <button id="showDialog22">500</button>
+                <button id="showDialog23">500</button>
+                <button id="showDialog24">500</button>
+              </div>
+            <!-- Timer -->
+            <body>
+                <div id="timer" class="timer">
+                    Time Elapsed: <span id="time-elapsed">0</span> seconds
+                </div>
+            
+                <script>
+                    let seconds = 0;
+                    const timeElapsedElement = document.getElementById('time-elapsed');
+            
+                    setInterval(() => {
+                        seconds++;
+                        timeElapsedElement.textContent = seconds;
+                    }, 1000);
+                </script>
+            <!-- Result Container -->
+            <div id="result-container" class="result-container">
+                <h2 id="result">Answer</h2>
+            </div>
+
+            <!-- Dialog -->
+            <dialog id="favDialog">
+                <form>
+                    <p>
+                        <label>
+                            What is the capital of France?
+                            <select>
+                                <option value="default">Choose…</option>
+                                <option>Paris</option>
+                                <option>Rome</option>
+                                <option>John</option>
+                                <option> Spayne</option>
+                            </select>
+                        </label>
+                    </p>
+                    <div>
+                        <button value="cancel" formmethod="dialog">Cancel</button>
+                        <button id="confirmBtn" value="default">Confirm</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+    </div>
+    <dialog id="1Dialog">
+      <form>
+          <p>
+              <label>
+                  What movie did Thanos win in
+                  <select>
+                      <option value="default">Choose…</option>
+                      <option>Thanos and friends</option>
+                      <option>Avengers Endgame</option>
+                      <option>Avengers Thanos Dynasty</option>
+                      <option>Avengers Infinite War</option>
+                  </select>
+              </label>
+          </p>
+          <div>
+              <button value="cancel" formmethod="dialog">Cancel</button>
+              <button id="confirmBtn" value="default">Confirm</button>
+          </div>
+      </form>
+  </dialog>
+</div>
+</div>
+
+<dialog id="2Dialog">
+  <form>
+      <p>
+          <label>
+              What is the blue hedgehogs name
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Mario</option>
+                  <option>Link</option>
+                  <option>Pikachu</option>
+                  <option>Sonic</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="4Dialog">
+  <form>
+      <p>
+          <label>
+              What is the most watched sport in the US
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Football Americano</option>
+                  <option>Futbol</option>
+                  <option>Soccer</option>
+                  <option>Football in another language</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="3Dialog">
+  <form>
+      <p>
+          <label>
+              Who sang not like us
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>J cole</option>
+                  <option>Drake</option>
+                  <option>Kendrick Lamar </option>
+                  <option>Chris Brown</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="5Dialog">
+  <form>
+      <p>
+          <label>
+              What country did the U.S gain independence from
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Mexico</option>
+                  <option> United Kingdom </option>
+                  <option>Ethiopia </option>
+                  <option>Gotham</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="6Dialog">
+  <form>
+      <p>
+          <label>
+              How many oficial DC movies was henry cavil superman in (not including snyder cuts)
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>2</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>5</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="7Dialog">
+  <form>
+      <p>
+          <label>
+              What won GOTY 2023
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Spider-Man 2</option>
+                  <option>Legends of Zelda Tears of the kingdom</option>
+                  <option>Street Fighter 6</option>
+                  <option>Baldurs gate</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="8Dialog">
+  <form>
+      <p>
+          <label>
+              Whats Yuno Miles most viewed song
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Indiana Jones</option>
+                  <option>4 Wheeler</option>
+                  <option>Put the money in the bag</option>
+                  <option>Martin Luther king</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="9Dialog">
+  <form>
+      <p>
+          <label>
+              Who has scored the most points in the NBA
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Roman Lartigue</option>
+                  <option> Lebron James</option>
+                  <option>Stephen Curry</option>
+                  <option>Michael Jordan</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="10Dialog">
+  <form>
+      <p>
+          <label>
+            How many countries are in africa
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>55 + 1</option>
+                  <option>54</option>
+                  <option>57</option>
+                  <option>10*3+20+9</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="11Dialog">
+  <form>
+      <p>
+          <label>
+              How many mission impossible movies are there
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="12Dialog">
+  <form>
+      <p>
+          <label>
+              Who was the first skin on the fortnite season 3 chapter 1 Battle pass
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Carbine </option>
+                  <option>Moonwalker outfit</option>
+                  <option>Mission Specialist Outfit</option>
+                  <option>Rust Lord</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="13Dialog">
+  <form>
+      <p>
+          <label>
+              When did One Direction officially split up
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>March 2016</option>
+                  <option>January 2014</option>
+                  <option>January 2016</option>
+                  <option>January 2015</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="14Dialog">
+  <form>
+      <p>
+        <label>
+            What is the max G most f1 drivers can experience
+            <select>
+                <option value="default">Choose…</option>
+                <option>4 </option>
+                <option>6</option>
+                <option>7</option>
+                <option>5</option>
+            </select>
+        </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="15Dialog">
+  <form>
+      <p>
+          <label>
+              What country is english spoken the most after the U.S
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Mexico</option>
+                  <option>United Kingdom</option>
+                  <option>Pakistan</option>
+                  <option>Canada</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="16Dialog">
+  <form>
+      <p>
+          <label>
+              What is the least popular movie (fun fact it only made 30$ at box office)
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Zyzzyx Road</option>
+                  <option>Cutthroat Island</option>
+                  <option>John Carter</option>
+                  <option>Storage 24</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="17Dialog">
+  <form>
+      <p>
+          <label>
+              What is the first pokemon in the pokedex
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Pikachu</option>
+                  <option>Charmander</option>
+                  <option>Squirtle</option>
+                  <option>Bulbasaur</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="18Dialog">
+  <form>
+      <p>
+          <label>
+              What artist recorded two bestselling albums while behind bars
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Justin Beiber</option>
+                  <option>Johnny Cash</option>
+                  <option>Prince</option>
+                  <option>Lil Wayne</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="19Dialog">
+  <form>
+      <p>
+          <label>
+            What NFL team is the only team to finish with a perfect season (undefeated)              <select>
+                  <option value="default">Choose…</option>
+                  <option>The Steelers</option>
+                  <option>The Patriots</option>
+                  <option>Cowboys</option>
+                  <option>Dolphins</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="20Dialog">
+  <form>
+      <p>
+          <label>
+              How many Timezones does france have
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>14</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>10</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="21Dialog">
+  <form>
+      <p>
+          <label>
+             What film won the Best Picture Oscar in 2020?
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Wonder Woman</option>
+                  <option>Mortal Kombat</option>
+                  <option>Parasite</option>
+                  <option>Bad boys for life</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="22Dialog">
+  <form>
+      <p>
+          <label>
+              What was the first 3d game
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Super Mario 64</option>
+                  <option>Maze War</option>
+                  <option>Zelda Ocarina of Time</option>
+                  <option>3d Monster maze</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="23Dialog">
+  <form>
+      <p>
+          <label>
+              How many grammys has killer mike won
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>3</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>4</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+<dialog id="24Dialog">
+  <form>
+      <p>
+          <label>
+              What NBA team has the most arrest in the last decade
+              <select>
+                  <option value="default">Choose…</option>
+                  <option>Houston Rockets</option>
+                  <option>Golden State Lakers</option>
+                  <option>Lakers</option>
+                  <option>Pheonix Suns</option>
+              </select>
+          </label>
+      </p>
+      <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+  </form>
+</dialog>
+</div>
+</div>
+
+
+</div>
+
+
+    <script>
+        // Open Dialog when the button is clicked
+        document.getElementById('showDialog').addEventListener('click', function() {
+            document.getElementById('favDialog').showModal();
+        }); 
+        document.getElementById('showDialog1').addEventListener('click', function() {
+            document.getElementById('1Dialog').showModal();
+        });
+        document.getElementById('showDialog2').addEventListener('click', function() {
+            document.getElementById('2Dialog').showModal();
+        });
+        document.getElementById('showDialog3').addEventListener('click', function() {
+            document.getElementById('3Dialog').showModal();
+        });
+        document.getElementById('showDialog4').addEventListener('click', function() {
+            document.getElementById('4Dialog').showModal();
+        });
+        document.getElementById('showDialog5').addEventListener('click', function() {
+            document.getElementById('5Dialog').showModal();
+        });
+        document.getElementById('showDialog6').addEventListener('click', function() {
+            document.getElementById('6Dialog').showModal();
+        });
+        document.getElementById('showDialog7').addEventListener('click', function() {
+            document.getElementById('7Dialog').showModal();
+        });
+        document.getElementById('showDialog8').addEventListener('click', function() {
+            document.getElementById('8Dialog').showModal();
+        });
+        document.getElementById('showDialog9').addEventListener('click', function() {
+            document.getElementById('9Dialog').showModal();
+        });
+        document.getElementById('showDialog10').addEventListener('click', function() {
+            document.getElementById('10Dialog').showModal();
+        });
+        document.getElementById('showDialog11').addEventListener('click', function() {
+            document.getElementById('11Dialog').showModal();
+        });
+        document.getElementById('showDialog12').addEventListener('click', function() {
+            document.getElementById('12Dialog').showModal();
+        });
+        document.getElementById('showDialog13').addEventListener('click', function() {
+            document.getElementById('13Dialog').showModal();
+        });
+        document.getElementById('showDialog14').addEventListener('click', function() {
+            document.getElementById('14Dialog').showModal();
+        });
+        document.getElementById('showDialog15').addEventListener('click', function() {
+            document.getElementById('15Dialog').showModal();
+        });
+        document.getElementById('showDialog16').addEventListener('click', function() {
+            document.getElementById('16Dialog').showModal();
+        });
+        document.getElementById('showDialog17').addEventListener('click', function() {
+            document.getElementById('17Dialog').showModal();
+        });
+        document.getElementById('showDialog18').addEventListener('click', function() {
+            document.getElementById('18Dialog').showModal();
+        });
+        document.getElementById('showDialog19').addEventListener('click', function() {
+            document.getElementById('19Dialog').showModal();
+        });
+        document.getElementById('showDialog20').addEventListener('click', function() {
+            document.getElementById('20Dialog').showModal();
+        });
+        document.getElementById('showDialog21').addEventListener('click', function() {
+            document.getElementById('21Dialog').showModal();
+        });
+        document.getElementById('showDialog22').addEventListener('click', function() {
+            document.getElementById('22Dialog').showModal();
+        });
+        document.getElementById('showDialog23').addEventListener('click', function() {
+            document.getElementById('23Dialog').showModal();
+        });
+        document.getElementById('showDialog24').addEventListener('click', function() {
+            document.getElementById('24Dialog').showModal();
+        });
+
+        // Add similar event listeners for other buttons if needed
+
+        // Close Dialog when the confirm button is clicked
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            const dialog = document.getElementById('favDialog');
+            dialog.close();
+        });
+        
+    </script>
+
+    <link rel="stylesheet" href="style2.css">
+</body>
+</html>
+
+    <!-- // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
+           <!-- https://www.youtube.com/watch?v=TAB_v6yBXIE</p>
+           https://jeopardylabs.com/play/clouds-320 -->
